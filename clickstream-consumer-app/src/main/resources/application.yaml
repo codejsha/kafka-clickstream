@@ -1,0 +1,35 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka1.example.com:9092,kafka2.example.com:9092,kafka3.example.com:9092
+    properties:
+      "[schema.registry.url]": http://schema-registry1.example.com:8081,http://schema-registry2.example.com:8081
+    consumer:
+      group-id: clickstream-kafka-group
+      client-id: clickstream-kafka-consumer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      enable-auto-commit: true
+      auto-commit-interval: 5000
+      auto-offset-reset: earliest
+      fetch-min-size: 1
+      fetch-max-wait: 500
+      max-poll-records: 500
+      # isolation-level: read_committed
+      properties:
+        ### partition.assignment.strategy
+        ### CooperativeStickyAssignor, RangeAssignor, StickyAssignor, RoundRobinAssignor
+        "[partition.assignment.strategy]": org.apache.kafka.clients.consumer.CooperativeStickyAssignor,org.apache.kafka.clients.consumer.RangeAssignor
+
+logging:
+  level:
+    root: info
+    org.apache.kafka: info
+
+app:
+  topics:
+    clickstream:
+      name: clickstream
+    clickstream-codes:
+      name: clickstream_codes
+    clickstream-users:
+      name: clickstream_users

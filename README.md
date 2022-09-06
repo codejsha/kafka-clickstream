@@ -6,4 +6,5 @@ This project showcases Kafka Streams applications that process datagen clickstre
 
 The demo is composed of the following applications:
 
+- clickstream-consumer-app: A Kafka consumer application that read the data from Kafka topics. The application is written in Java and uses the [Spring for Apache Kafka](https://spring.io/projects/spring-kafka).
 - clickstream-streams-app: A Kafka Streams application that processes the clickstream data and writes the results to a Kafka topic. The application is written in Java and uses the [Spring for Apache Kafka](https://spring.io/projects/spring-kafka).

@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    bootstrap-servers: "kafka:9093"
+    properties:
+      "[schema.registry.url]": http://schema-registry:8081
