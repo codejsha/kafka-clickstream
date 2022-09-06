@@ -1,0 +1,24 @@
+{
+  "connect.name": "clickstream.UsernameCountWindow",
+  "fields": [
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "window_start",
+      "type": "long"
+    },
+    {
+      "name": "window_stop",
+      "type": "long"
+    },
+    {
+      "name": "count",
+      "type": "long"
+    }
+  ],
+  "name": "UsernameCountWindow",
+  "namespace": "clickstream",
+  "type": "record"
+}

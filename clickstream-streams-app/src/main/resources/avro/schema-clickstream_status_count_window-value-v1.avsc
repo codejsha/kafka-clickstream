@@ -1,0 +1,24 @@
+{
+  "connect.name": "clickstream.StatusCountWindow",
+  "fields": [
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "window_start",
+      "type": "long"
+    },
+    {
+      "name": "window_stop",
+      "type": "long"
+    },
+    {
+      "name": "count",
+      "type": "long"
+    }
+  ],
+  "name": "StatusCountWindow",
+  "namespace": "clickstream",
+  "type": "record"
+}
