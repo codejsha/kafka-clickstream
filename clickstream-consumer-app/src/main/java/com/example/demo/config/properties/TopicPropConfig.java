@@ -12,19 +12,11 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 @Getter
 @ToString
 @RequiredArgsConstructor
-public class TopicConfigProp {
+public class TopicPropConfig {
     @NestedConfigurationProperty
     private final TopicProp clickstream;
     @NestedConfigurationProperty
     private final TopicProp clickstreamUser;
     @NestedConfigurationProperty
     private final TopicProp clickstreamCode;
-    @NestedConfigurationProperty
-    private final TopicProp userClickEvent;
-    @NestedConfigurationProperty
-    private final TopicProp userClickEventWindow;
-    @NestedConfigurationProperty
-    private final TopicProp clickEventWindow;
-    @NestedConfigurationProperty
-    private final TopicProp pageClickEventWindow;
 }

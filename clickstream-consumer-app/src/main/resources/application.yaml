@@ -26,10 +26,12 @@ logging:
     org.apache.kafka: info
 
 app:
+  consumer:
+    type: clickstream
   topics:
     clickstream:
-      name: clickstream
-    clickstream-codes:
-      name: clickstream_codes
-    clickstream-users:
-      name: clickstream_users
+      topic: clickstream
+    clickstream-user:
+      topic: clickstream_users
+    clickstream-code:
+      topic: clickstream_codes
