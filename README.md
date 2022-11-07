@@ -6,5 +6,10 @@ This project showcases Kafka Streams applications that process datagen clickstre
 
 The demo is composed of the following applications:
 
-- clickstream-consumer-app: A Kafka consumer application that read the data from Kafka topics.
-- clickstream-streams-app: A Kafka Streams application that processes the clickstream data and writes the results to a Kafka topic.
+- clickstream-consumer-app
+- clickstream-click-event-per-period-app
+- clickstream-consumer-app
+- clickstream-error-click-event-per-period-app
+- clickstream-page-click-event-per-period-app
+- clickstream-user-click-event-app
+- clickstream-user-click-event-per-period-app
