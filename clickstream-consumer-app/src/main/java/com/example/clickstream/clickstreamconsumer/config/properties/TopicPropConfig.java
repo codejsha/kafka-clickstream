@@ -1,4 +1,4 @@
-package com.example.demo.config.properties;
+package com.example.clickstream.clickstreamconsumer.config.properties;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

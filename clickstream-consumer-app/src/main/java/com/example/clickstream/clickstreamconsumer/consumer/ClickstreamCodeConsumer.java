@@ -1,12 +1,9 @@
-package com.example.demo.consumer;
+package com.example.clickstream.clickstreamconsumer.consumer;
 
 import clickstream.Code;
-import clickstream.Event;
-import clickstream.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.avro.generic.GenericRecord;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;

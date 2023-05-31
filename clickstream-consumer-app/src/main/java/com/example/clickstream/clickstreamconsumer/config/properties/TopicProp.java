@@ -1,7 +1,6 @@
-package com.example.demo.config.properties;
+package com.example.clickstream.clickstreamconsumer.config.properties;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
