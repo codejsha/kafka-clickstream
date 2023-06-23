@@ -19,18 +19,18 @@ public class ClickstreamConsumer {
                                                @Header(KafkaHeaders.RECEIVED_PARTITION_ID) String partition,
                                                @Header(KafkaHeaders.OFFSET) int offset,
                                                @Payload GenericRecord record) {
-        var ip = record.get("ip").toString();
-        var userid = Integer.parseInt(record.get("userid").toString());
-        var remote_user = record.get("remote_user").toString();
-        var time = record.get("time").toString();
-        var time2 = Long.parseLong(record.get("_time").toString());
-        var request = record.get("request").toString();
-        var status = record.get("status").toString();
-        var bytes = record.get("bytes").toString();
-        var referrer = record.get("referrer").toString();
-        var agent = record.get("agent").toString();
-        var clickstream = new Event(ip, userid, remote_user, time, time2, request, status, bytes, referrer, agent);
-
-        log.info("Received clickstream event: {} | {}", key, clickstream);
+        var clickstreamEvent = Event.newBuilder()
+                .setIp(record.get("ip").toString())
+                .setUserid(Integer.parseInt(record.get("userid").toString()))
+                .setRemoteUser(record.get("remote_user").toString())
+                .setTime(record.get("time").toString())
+                .setTime$1(Long.parseLong(record.get("_time").toString()))
+                .setRequest(record.get("request").toString())
+                .setStatus(record.get("status").toString())
+                .setBytes(record.get("bytes").toString())
+                .setReferrer(record.get("referrer").toString())
+                .setAgent(record.get("agent").toString())
+                .build();
+        log.info("Received clickstream event: {} | {}", key, clickstreamEvent);
     }
 }

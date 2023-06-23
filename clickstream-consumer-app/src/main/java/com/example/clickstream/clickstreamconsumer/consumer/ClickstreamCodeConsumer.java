@@ -19,10 +19,10 @@ public class ClickstreamCodeConsumer {
                                               @Header(KafkaHeaders.RECEIVED_PARTITION_ID) String partition,
                                               @Header(KafkaHeaders.OFFSET) int offset,
                                               @Payload GenericRecord record) {
-        var code = Integer.parseInt(record.get("code").toString());
-        var definition = record.get("definition").toString();
-        var clickstreamCode = new Code(code, definition);
-
+        var clickstreamCode = Code.newBuilder()
+                .setCode(Integer.parseInt(record.get("code").toString()))
+                .setDefinition(record.get("definition").toString())
+                .build();
         log.info("Received clickstream code: {} | {}", key, clickstreamCode);
     }
 }

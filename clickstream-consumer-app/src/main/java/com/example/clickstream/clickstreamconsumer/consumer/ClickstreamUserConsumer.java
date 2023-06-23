@@ -19,15 +19,15 @@ public class ClickstreamUserConsumer {
                                               @Header(KafkaHeaders.RECEIVED_PARTITION_ID) String partition,
                                               @Header(KafkaHeaders.OFFSET) int offset,
                                               @Payload GenericRecord record) {
-        var userid = Integer.parseInt(record.get("user_id").toString());
-        var username = record.get("username").toString();
-        var registered_at = Long.parseLong(record.get("registered_at").toString());
-        var firstname = record.get("first_name").toString();
-        var lastname = record.get("last_name").toString();
-        var city = record.get("city").toString();
-        var level = record.get("level").toString();
-        var clickstreamUser = new User(userid, username, registered_at, firstname, lastname, city, level);
-
+        var clickstreamUser = User.newBuilder()
+                .setUserId(Integer.parseInt(record.get("user_id").toString()))
+                .setUsername(record.get("username").toString())
+                .setRegisteredAt(Long.parseLong(record.get("registered_at").toString()))
+                .setFirstName(record.get("first_name").toString())
+                .setLastName(record.get("last_name").toString())
+                .setCity(record.get("city").toString())
+                .setLevel(record.get("level").toString())
+                .build();
         log.info("Received clickstream user: {} | {}", key, clickstreamUser);
     }
 }
